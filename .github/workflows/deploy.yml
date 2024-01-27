@@ -10,5 +10,8 @@ jobs:
     name: Kick deploy hook
     runs-on: ubuntu-latest
     steps:
-      - name: curl
-        run: curl -X POST '${{ secrets.DEPLOY_HOOK_URL }}'
+      - name: Trigger deploy hooks
+        run: |
+          curl -X POST '${{ secrets.DEPLOY_HOOK_URL }}'
+          curl -X POST '${{ secrets.DEPLOY_HOOK_URL_VERCEL }}'
+
