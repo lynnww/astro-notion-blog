@@ -58,11 +58,11 @@ const [posts, rankedPosts, tags, numberOfPages] = await Promise.all([
             <PostTitle post={post} />
             <PostFeaturedImage post={post} />
             <PostExcerpt post={post} />
-            <Comments client:idle />
             <ReadMoreLink post={post} />
           </div>
         ))
       )
+      <Comments />
     }
   
     <footer>
