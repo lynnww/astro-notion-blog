@@ -18,6 +18,8 @@ import Pagination from '../../../components/Pagination.astro'
 import BlogPostsLink from '../../../components/BlogPostsLink.astro'
 import BlogTagsLink from '../../../components/BlogTagsLink.astro'
 import styles from '../../../styles/blog.module.css'
+import Comments from "../../../components/Comments.astro"
+
 
 export async function getStaticPaths() {
   const numberOfPages = await getNumberOfPages()
@@ -61,7 +63,7 @@ const [posts, rankedPosts, tags, numberOfPages] = await Promise.all([
         ))
       )
     }
-
+    <Comments />
     <footer>
       <Pagination
         currentPage={parseInt(page, 10)}
