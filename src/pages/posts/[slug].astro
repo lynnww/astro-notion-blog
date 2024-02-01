@@ -27,7 +27,6 @@ import BlogTagsLink from '../../components/BlogTagsLink.astro'
 import Comments from  '../../components/Comments.astro'
 import styles from '../../styles/blog.module.css'
 
-
 export async function getStaticPaths() {
   const posts = await getAllPosts()
   return posts.map((post: interfaces.Post) => ({ params: { slug: post.Slug } }))
